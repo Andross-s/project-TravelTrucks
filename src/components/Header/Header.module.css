@@ -1,1 +1,65 @@
 /* Styles for the Header component. */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--badges);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: var(--header-height);
+}
+
+.logo {
+  grid-column: 1;
+  justify-self: start;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.logoTravel {
+  color: var(--main);
+}
+
+.logoTrucks {
+  color: var(--text);
+}
+
+.nav {
+  grid-column: 2;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navLink {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--main);
+}
+
+.navLinkActive {
+  color: var(--grey-green);
+}
+
+@media (max-width: 768px) {
+  .inner {
+    height: 64px;
+  }
+
+  .navList {
+    gap: 16px;
+  }
+}

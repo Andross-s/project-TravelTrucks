@@ -3,6 +3,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header/Header";
+import QueryProvider from "@/providers/QueryProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -29,7 +30,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body>
         <Header />
-        {children}
+        <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
   );

@@ -1,1 +1,82 @@
 /* Styles for the Banner component. */
+.hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1440 / 689;
+  background-image: url("/campersImage/hero-img.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  padding-top: 195px;
+  gap: 40px;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 67%;
+  color: var(--inputs);
+  margin-bottom: 16px;
+}
+
+.text {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+  color: var(--inputs);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 173px;
+  height: 56px;
+  padding: 16px 48px;
+  border-radius: 200px;
+  background-color: var(--grey-green);
+  color: var(--white);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover:not(:disabled) {
+  background-color: var(--green-hover);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding-top: 96px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .text {
+    font-size: 18px;
+  }
+
+  .button {
+    max-width: 100%;
+    padding: 12px 24px;
+  }
+}

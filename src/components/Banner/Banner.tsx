@@ -3,7 +3,7 @@
 
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
-import { Oval } from "react-loader-spinner";
+import Spinner from "@/components/Spinner/Spinner";
 import styles from "./Banner.module.css";
 
 const Banner = () => {
@@ -31,19 +31,7 @@ const Banner = () => {
           onClick={handleViewNow}
           disabled={isPending}
         >
-          {isPending ? (
-            <Oval
-              visible
-              height={20}
-              width={20}
-              strokeWidth={5}
-              color="#fff"
-              secondaryColor="rgba(255, 255, 255, 0.4)"
-              ariaLabel="Loading"
-            />
-          ) : (
-            "View Now"
-          )}
+          {isPending ? <Spinner /> : "View Now"}
         </button>
       </div>
     </section>

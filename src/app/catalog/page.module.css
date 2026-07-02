@@ -1,1 +1,39 @@
 /* Styles for the catalog page layout (filters + camper list). */
+.page {
+  display: flex;
+  align-items: flex-start;
+  gap: 65px;
+  padding-top: 48px;
+  padding-bottom: 52px;
+}
+
+.sidebar {
+  flex-shrink: 0;
+  padding: 24px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  max-width: 888px;
+}
+
+.state {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  font-size: 16px;
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}

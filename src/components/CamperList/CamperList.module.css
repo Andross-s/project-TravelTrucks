@@ -1,1 +1,7 @@
 /* Styles for the CamperList component. */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 40px;
+}

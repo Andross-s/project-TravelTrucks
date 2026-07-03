@@ -2,6 +2,7 @@
 // and persistent UI (Header/Footer) — to be implemented.
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import Header from "@/components/Header/Header";
 import QueryProvider from "@/providers/QueryProvider";
 import "./globals.css";
@@ -30,6 +31,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body>
         <Header />
+        <Toaster position="top-right" />
         <QueryProvider>{children}</QueryProvider>
       </body>
     </html>

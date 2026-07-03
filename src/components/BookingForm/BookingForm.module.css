@@ -1,1 +1,73 @@
 /* Styles for the BookingForm component. */
+.wrapper {
+  padding: 44px;
+  border-radius: 16px;
+  background: var(--inputs);
+  border: 1px solid var(--gray-light);
+}
+
+.title {
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 120%;
+  color: var(--main);
+}
+
+.subtitle {
+  margin-bottom: 24px;
+  color: var(--gray);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.input {
+  padding: 18px 18px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  font-size: 16px;
+  min-width: 527px;
+  background: var(--inputs);
+}
+
+.input::placeholder {
+  color: var(--gray);
+}
+
+.input:hover::placeholder,
+.input:active::placeholder {
+  color: var(--main);
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  padding: 16px 60px;
+  border-radius: 200px;
+  background-color: var(--grey-green);
+  color: var(--white);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: var(--green-hover);
+}
+
+.submitButton:disabled {
+  cursor: default;
+  opacity: 0.8;
+}

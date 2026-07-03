@@ -1,1 +1,103 @@
 /* Styles for the camper details page (gallery, reviews, booking form). */
+.page {
+  padding-block: 64px;
+}
+
+.state {
+  display: flex;
+  justify-content: center;
+  padding: 80px 0;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 88px;
+}
+
+.topRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.bottomRow {
+}
+
+.topRow > *,
+.bottomRow > * {
+  min-width: 0;
+}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.infoCardContent {
+  border-radius: 16px;
+  padding: 24px;
+  background: var(--inputs);
+}
+
+.name {
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 133%;
+  color: var(--main);
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  color: var(--main);
+}
+
+.metaIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.price {
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 133%;
+  color: var(--main);
+}
+
+.description {
+  color: var(--text);
+}
+
+.reviewsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 133%;
+  color: var(--main);
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .topRow,
+  .bottomRow {
+    grid-template-columns: 1fr;
+  }
+}

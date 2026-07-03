@@ -21,9 +21,6 @@
   gap: 24px;
 }
 
-.bottomRow {
-}
-
 .topRow > *,
 .bottomRow > * {
   min-width: 0;

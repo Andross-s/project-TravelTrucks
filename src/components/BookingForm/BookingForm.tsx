@@ -18,7 +18,8 @@ interface BookingFormErrors {
   email?: string;
 }
 
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const NAME_PATTERN = /^[\p{L}][\p{L}\s'-]*$/u;
+const EMAIL_PATTERN = /^[a-zA-Z0-9_+-]+(\.[a-zA-Z0-9_+-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,}$/;
 
 const BookingForm = ({ camperId }: BookingFormProps) => {
   const [name, setName] = useState("");
@@ -54,6 +55,8 @@ const BookingForm = ({ camperId }: BookingFormProps) => {
     const nextErrors: BookingFormErrors = {};
     if (name.trim() === "") {
       nextErrors.name = "Please enter your full name.";
+    } else if (!NAME_PATTERN.test(name.trim())) {
+      nextErrors.name = "Name can only contain letters, spaces, hyphens, and apostrophes.";
     }
     if (email.trim() === "") {
       nextErrors.email = "Please enter your email address.";

@@ -28,6 +28,10 @@
   color: var(--text);
 }
 
+.listWrapper {
+  position: relative;
+}
+
 @media (max-width: 768px) {
   .page {
     flex-direction: column;

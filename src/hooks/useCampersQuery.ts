@@ -1,7 +1,7 @@
 // useCampersQuery: useInfiniteQuery hook for paginated camper fetching on the catalog page.
 "use client";
 
-import { useInfiniteQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, keepPreviousData } from "@tanstack/react-query";
 import { getCampers } from "@/services/campers";
 import type { CampersFilters, CampersListResponse } from "@/types/camper";
 
@@ -15,6 +15,7 @@ export function useCampersQuery(filters: CampersFilters = {}) {
     initialPageParam: 1,
     getNextPageParam: (lastPage) =>
       lastPage.page < lastPage.totalPages ? lastPage.page + 1 : undefined,
+    placeholderData: keepPreviousData,
   });
 
   const campers = query.data?.pages.flatMap((page) => page.campers) ?? [];

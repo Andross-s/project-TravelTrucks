@@ -84,32 +84,48 @@ const BookingForm = ({ camperId }: BookingFormProps) => {
       <form className={styles.form} onSubmit={handleSubmit} noValidate>
         <div className={styles.inputGroup}>
           <div className={styles.fieldWrapper}>
+            <label htmlFor="booking-name" className="visually-hidden">
+              Name
+            </label>
             <input
+              id="booking-name"
               className={`${styles.input} ${errors.name ? styles.inputError : ""}`}
               type="text"
               placeholder="Name*"
               value={name}
               onChange={handleNameChange}
+              aria-invalid={Boolean(errors.name)}
+              aria-describedby={errors.name ? "booking-name-error" : undefined}
             />
             {errors.name && (
               <>
                 <TbExclamationCircleFilled className={styles.errorIcon} />
-                <p className={styles.errorText}>{errors.name}</p>
+                <p id="booking-name-error" className={styles.errorText}>
+                  {errors.name}
+                </p>
               </>
             )}
           </div>
           <div className={styles.fieldWrapper}>
+            <label htmlFor="booking-email" className="visually-hidden">
+              Email
+            </label>
             <input
+              id="booking-email"
               className={`${styles.input} ${errors.email ? styles.inputError : ""}`}
               type="email"
               placeholder="Email*"
               value={email}
               onChange={handleEmailChange}
+              aria-invalid={Boolean(errors.email)}
+              aria-describedby={errors.email ? "booking-email-error" : undefined}
             />
             {errors.email && (
               <>
                 <TbExclamationCircleFilled className={styles.errorIcon} />
-                <p className={styles.errorText}>{errors.email}</p>
+                <p id="booking-email-error" className={styles.errorText}>
+                  {errors.email}
+                </p>
               </>
             )}
           </div>

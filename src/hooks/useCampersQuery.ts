@@ -19,11 +19,9 @@ export function useCampersQuery(filters: CampersFilters = {}) {
   });
 
   const campers = query.data?.pages.flatMap((page) => page.campers) ?? [];
-  const total = query.data?.pages.at(-1)?.total ?? 0;
 
   return {
     ...query,
     campers,
-    total,
   };
 }

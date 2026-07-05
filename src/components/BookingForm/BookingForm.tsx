@@ -27,7 +27,8 @@ const BookingForm = ({ camperId }: BookingFormProps) => {
   const [errors, setErrors] = useState<BookingFormErrors>({});
 
   const mutation = useMutation({
-    mutationFn: () => createBookingRequest(camperId, { name, email }),
+    mutationFn: () =>
+      createBookingRequest(camperId, { name: name.trim(), email: email.trim() }),
     onSuccess: (data) => {
       toast.success(data.message);
       setName("");
@@ -60,7 +61,7 @@ const BookingForm = ({ camperId }: BookingFormProps) => {
     }
     if (email.trim() === "") {
       nextErrors.email = "Please enter your email address.";
-    } else if (!EMAIL_PATTERN.test(email)) {
+    } else if (!EMAIL_PATTERN.test(email.trim())) {
       nextErrors.email = "Please enter a valid email address.";
     }
 

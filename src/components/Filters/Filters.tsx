@@ -15,7 +15,7 @@ interface FiltersProps {
 }
 
 const Filters = ({ onApply, isLoading }: FiltersProps) => {
-  const { data } = useQuery({
+  const { data, isError } = useQuery({
     queryKey: ["campersFilters"],
     queryFn: getCampersFilters,
   });
@@ -68,6 +68,11 @@ const Filters = ({ onApply, isLoading }: FiltersProps) => {
 
       <div className={styles.filtersWrapper}>
         <h2 className={styles.filtersTitle}>Filters</h2>
+        {isError && (
+          <p className={styles.errorText}>
+            Something went wrong while loading filter options.
+          </p>
+        )}
         <fieldset className={styles.fieldset}>
           <legend className={styles.legend}>Camper form</legend>
           {data?.forms.map((value) => (

@@ -65,6 +65,11 @@
   line-height: 120%;
 }
 
+.errorText {
+  font-size: 14px;
+  color: var(--button);
+}
+
 .fieldset {
   display: flex;
   flex-direction: column;

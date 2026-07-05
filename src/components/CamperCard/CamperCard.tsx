@@ -7,9 +7,10 @@ import styles from "./CamperCard.module.css";
 
 interface CamperCardProps {
   camper: Camper;
+  priority?: boolean;
 }
 
-const CamperCard = ({ camper }: CamperCardProps) => {
+const CamperCard = ({ camper, priority }: CamperCardProps) => {
   return (
     <li className={styles.card}>
       <Image
@@ -18,6 +19,7 @@ const CamperCard = ({ camper }: CamperCardProps) => {
         alt={camper.name}
         width={290}
         height={310}
+        priority={priority}
       />
       <div className={styles.content}>
         <div className={styles.headerRow}>

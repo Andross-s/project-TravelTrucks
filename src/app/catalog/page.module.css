@@ -15,6 +15,7 @@
 .content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   flex: 1;
   min-width: 0;
   max-width: 888px;
@@ -30,6 +31,9 @@
 
 .listWrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {

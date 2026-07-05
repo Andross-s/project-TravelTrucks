@@ -10,8 +10,8 @@ interface CamperListProps {
 const CamperList = ({ campers }: CamperListProps) => {
   return (
     <ul className={styles.list}>
-      {campers.map((camper) => (
-        <CamperCard key={camper.id} camper={camper} />
+      {campers.map((camper, index) => (
+        <CamperCard key={camper.id} camper={camper} priority={index === 0} />
       ))}
     </ul>
   );

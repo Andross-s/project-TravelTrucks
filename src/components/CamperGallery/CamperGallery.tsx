@@ -19,23 +19,23 @@ interface CamperGalleryProps {
 const CamperGallery = ({ gallery, camperName }: CamperGalleryProps) => {
   const mainSwiperRef = useRef<SwiperType | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const images = [...gallery].sort((a, b) => a.order - b.order);
-
-  if (images.length === 0) {
+  if (!gallery || gallery.length === 0) {
     return null;
   }
+
+  const images = [...gallery].sort((a, b) => a.order - b.order);
 
   return (
     <div className={styles.wrapper}>
       <Swiper
-        loop
+        loop={images.length > 1}
         onSwiper={(swiper) => {
           mainSwiperRef.current = swiper;
         }}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
         className={styles.mainSwiper}
       >
-        {images.map((image) => (
+        {images.map((image, index) => (
           <SwiperSlide key={image.id}>
             <div className={styles.mainSlide}>
               <Image
@@ -44,6 +44,7 @@ const CamperGallery = ({ gallery, camperName }: CamperGalleryProps) => {
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className={styles.mainImage}
+                priority={index === 0}
               />
             </div>
           </SwiperSlide>

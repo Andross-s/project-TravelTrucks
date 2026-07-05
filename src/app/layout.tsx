@@ -1,5 +1,5 @@
 // Root layout: wraps all pages with <html>/<body>, global providers (TanStack Query)
-// and persistent UI (Header/Footer) — to be implemented.
+// and persistent UI (Header).
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";

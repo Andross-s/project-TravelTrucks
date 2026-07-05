@@ -34,6 +34,7 @@ export default function CatalogPage() {
 
   return (
     <main className={`container ${styles.page}`}>
+      <h1 className="visually-hidden">Camper catalog</h1>
       <aside className={styles.sidebar}>
         <Filters
           key={filtersKey}

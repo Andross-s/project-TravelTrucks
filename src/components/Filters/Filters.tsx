@@ -15,7 +15,11 @@ interface FiltersProps {
 }
 
 const Filters = ({ onApply, isLoading }: FiltersProps) => {
-  const { data, isError } = useQuery({
+  const {
+    data,
+    isLoading: isFiltersLoading,
+    isError: isFiltersError,
+  } = useQuery({
     queryKey: ["campersFilters"],
     queryFn: getCampersFilters,
   });
@@ -68,7 +72,16 @@ const Filters = ({ onApply, isLoading }: FiltersProps) => {
 
       <div className={styles.filtersWrapper}>
         <h2 className={styles.filtersTitle}>Filters</h2>
-        {isError && (
+        {isFiltersLoading && (
+          <div className={styles.filtersState}>
+            <Spinner
+              size={24}
+              color="#829b91"
+              secondaryColor="rgba(130, 155, 145, 0.4)"
+            />
+          </div>
+        )}
+        {isFiltersError && (
           <p className={styles.errorText}>
             Something went wrong while loading filter options.
           </p>
